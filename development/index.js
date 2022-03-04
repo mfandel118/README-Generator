@@ -4,6 +4,7 @@ const fs = require("fs");
 
 inquirer
     .prompt([
+        // Title✅ Description✅ Usage✅ Installation✅ Deployed link✅ GitHub link✅ Pictures✅ Contributors✅ Questions✅✅ License
         {
             type: "input",
             message: "What is the NAME of your project?",
@@ -54,7 +55,7 @@ inquirer
         },
         {
             type: "input",
-            message: "Please write a brief statement acknowledging the additional CONTRIBUTORS to this project:",
+            message: "What are the NAMES of all additional CONTRIBUTORS to this project:?",
             name: "team",
             when: (input) => input.teamConfirm === true,
         },
@@ -90,30 +91,35 @@ inquirer
             message: "Please paste the full URL to your GITHUB PROFILE:",
             name: "gitHub",
         },
+        // {
+        //     type: "list",
+        //     message: "What type of license is this project using?",
+        //     name: "license",
+        //     choices: []
+        // },
     ])
     .then((input) => {
         // console.log(input)
         // Declare variables to nest in template literal
-        let displayTeam = input.teamConfirm ? `## Contributors\n\n${input.team}\n\n` : "";
-        let teamToC = input.teamConfirm ? `* [Contributors](#contributors)\n\n`: "";
+        let displayTeam = input.teamConfirm ? `## Contributors\n\nAdditional contributors to this project: ${input.team}\n\n` : "";
+        let teamToC = input.teamConfirm ? `* [Contributors](#contributors)\n`: "";
 
         let displayURL = input.urlConfirm ? `## Link to Deployed Application\n\n${input.url}\n\n` : "";
-        let urlToC = input.urlConfirm ? `* [Link to Deployed Application](#link-to-deployed-application)\n\n` : "";
+        let urlToC = input.urlConfirm ? `* [Link to Deployed Application](#link-to-deployed-application)\n` : "";
 
         let displayRepo = input.repoConfirm ? `## Link to GitHub Repo\n\n${input.url}\n\n` : "";
-        let repoToC = input.repoConfirm ? `[Link to GitHub Repo](#link-to-github-repo)\n\n` : "";
+        let repoToC = input.repoConfirm ? `[Link to GitHub Repo](#link-to-github-repo)\n` : "";
 
         let displayPic1 = input.picConfirm ? `## Screenshot(s)\n<img src="${input.pic1}">\n` : "";
         let displayPic2 = input.picConfirm2 ? `<img src="${input.pic2}">\n\n` : "";
-        let picToC = input.picConfirm ? `* [Screenshots](#screenshots)\n\n`: "";
+        let picToC = input.picConfirm ? `* [Screenshots](#screenshots)\n`: "";
 
         // Display all inputted information on README file
         fs.writeFile("README.md", 
-        // Title✅ Table of Contents✅ Description✅✅ Usage✅ Installation✅✅ Deployed link✅✅ GitHub link✅✅ Pictures✅✅ Contributors✅✅ Questions✅ ✅ License✅
-        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n\n* [Installation](#installation)\n\n${urlToC}${repoToC}${picToC}${teamToC}* [Questions](#Questions)\n\n* [License](#license)\n\n
-        ## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}${displayTeam}## Questions?\n\n* Email:${input.email}\n\n* GitHub Profile:${input.gitHub}\n\n
-        ## License\n\n`, 
-        // NEED TO ADD LICENSE INFO
+
+        // Title✅ Table of Contents✅ Description✅✅ Usage✅ Installation✅✅ Deployed link✅✅ GitHub link✅✅ Pictures✅✅ Contributors✅✅ Questions✅ ✅ License✅✅
+        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}${teamToC}* [Questions](#Questions)\n* [License](#license)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}${displayTeam}## Questions?\n\n* Email: ${input.email}\n\n* GitHub Profile: ${input.gitHub}\n\n## License\n\n${input.name}`, 
+        
         (err) =>
         err ? console.error(err) : console.log('README file created!'))
     })
