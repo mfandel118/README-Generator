@@ -7,11 +7,16 @@ inquirer
         {
             type: "input",
             message: "What is the name of your project?",
-            name: "name",
-        }
+            name: "projName",
+        },
+        {
+            type: "input",
+            message: "Please write a brief description of your project.",
+            name: "description",
+        },
     ])
     .then((input) =>
         // console.log(input)
-        fs.writeFile("README.md", JSON.stringify(input), (err) =>
-        err ? console.error(err) : console.log('README file created & project title added!'))
-    );
+        fs.writeFile("README.md", `# ${input.projName}\n\n## Description\n\n${input.description}`, (err) =>
+        err ? console.error(err) : console.log('README file created!'))
+    )
