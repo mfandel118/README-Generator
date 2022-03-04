@@ -1,40 +1,47 @@
-# sdgkjbadlkjfgkjdfgh
+# Berley
 
 ## Table of Contents:
 
-* [Description](#description)
-* [Usage](#usage)
-* [Installation](#installation)
-[Link to GitHub Repo](#link-to-github-repo)
-* [Contributors](#contributors)
-* [Questions](#Questions)
-* [License](#license)
+- [Description](#description)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Link to Deployed Application](#link-to-deployed-application)
+- [Screenshots](#screenshots)
+- [Contributors](#contributors)
+- [Questions](#questions)
+- [License](#license)
 
 ## Description
 
-djkfhgbksjfdbgksdbhgksbl
+dslkfjghuq9345kjterdiugp9w35tjohgdapfkgjbep
 
 ## Usage
 
-sfmlkdjhfgoadnv;nsogdighwrig
+sjdgeiwusgbagkjzbosiuhgopiwghrgokndovjb
 
 ## Installation
 
-skdjghsbgvslkdjgwrigouh
+- First\n\n* Second\n\n* Third
 
-## Link to GitHub Repo
+## Link to Deployed Application
 
-undefined
+https://mfandel118.github.io/Portfolio/
+
+## Screenshot(s)
+
+<img src="./assets/test1.png">
+
+<img src="./assets/test2.png">
 
 ## Contributors
 
-Additional Contributors to this project: Berley, Bri, & Missy
+Additional contributors to this project: Berley & Bri
 
 ## Questions?
 
-* Email: mfandel118@gmail.com
+- Email: mfandel118@gmail.com
 
-* GitHub Profile: https://github.com/mfandel118
+- GitHub Profile: https://github.com/mfandel118
 
 ## License
 

@@ -88,7 +88,7 @@ inquirer
         },
         {
             type: "input",
-            message: "Please paste the full URL to your GITHUB PROFILE:",
+            message: "What is your GITHUB USERNAME?:",
             name: "gitHub",
         },
         // {
@@ -101,6 +101,11 @@ inquirer
     .then((input) => {
         // console.log(input)
         // Declare variables to nest in template literal
+        let displayPic1 = input.picConfirm ? `## Screenshot(s)\n<img src="${input.pic1}">\n\n` : "";
+        let displayPic2 = input.picConfirm2 ? `<img src="${input.pic2}">\n\n` : "";
+        let picToC = input.picConfirm ? `* [Screenshots](#screenshots)\n`: "";
+
+        
         let displayTeam = input.teamConfirm ? `## Contributors\n\nAdditional contributors to this project: ${input.team}\n\n` : "";
         let teamToC = input.teamConfirm ? `* [Contributors](#contributors)\n`: "";
 
@@ -108,17 +113,13 @@ inquirer
         let urlToC = input.urlConfirm ? `* [Link to Deployed Application](#link-to-deployed-application)\n` : "";
 
         let displayRepo = input.repoConfirm ? `## Link to GitHub Repo\n\n${input.url}\n\n` : "";
-        let repoToC = input.repoConfirm ? `[Link to GitHub Repo](#link-to-github-repo)\n` : "";
-
-        let displayPic1 = input.picConfirm ? `## Screenshot(s)\n<img src="${input.pic1}">\n` : "";
-        let displayPic2 = input.picConfirm2 ? `<img src="${input.pic2}">\n\n` : "";
-        let picToC = input.picConfirm ? `* [Screenshots](#screenshots)\n`: "";
+        let repoToC = input.repoConfirm ? `* [Link to GitHub Repo](#link-to-github-repo)\n` : "";
 
         // Display all inputted information on README file
         fs.writeFile("README.md", 
 
         // Title✅ Table of Contents✅ Description✅✅ Usage✅ Installation✅✅ Deployed link✅✅ GitHub link✅✅ Pictures✅✅ Contributors✅✅ Questions✅ ✅ License✅✅
-        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}${teamToC}* [Questions](#Questions)\n* [License](#license)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}${displayTeam}## Questions?\n\n* Email: ${input.email}\n\n* GitHub Profile: ${input.gitHub}\n\n## License\n\n${input.name}`, 
+        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}${teamToC}* [Questions](#questions)\n* [License](#license)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}${displayTeam}## Questions?\n\n* Email: ${input.email}\n\n* GitHub Profile: https://github.com/${input.gitHub}\n\n## License\n\n${input.name}`, 
         
         (err) =>
         err ? console.error(err) : console.log('README file created!'))
