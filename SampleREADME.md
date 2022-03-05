@@ -36,9 +36,7 @@ https://github.com/mfandel118/Portfolio
 
 ![Screenshot](./assets/portfolio.png)
 
-![Another Screenshot](./assets/portfolio.png)
-
-![Third Screenshot](./assets/portfolio.png)
+![Another Screenshot](./assets/portfolio2.png)
 
 ## Questions
 

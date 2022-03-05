@@ -10,6 +10,8 @@
 - [License](#license)
 - [Questions](#questions)
 
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/)
+
 ## Description
 
 The purpose of this project is to provide a template to generate a professional README for any project.
@@ -37,11 +39,7 @@ https://github.com/mfandel118/README-Generator
 ![Screenshot of README Generator Prompts](./assets/node-prompts.png)
 ![Screenshot of README Generator Prompts](./assets/sample-README.png)
 
-## License
-
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/)
-
-## Questions?
+## Questions
 
 - Send me an Email: mfandel118@gmail.com
 
