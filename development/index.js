@@ -165,7 +165,7 @@ function contactPrompts() {
         .then((input) => {
             // Add user contact info to README
             fs.appendFile("README.md",
-            `## Questions\n\nAny additional questions about this project? Please feel free to reach out:\n\n* Name: ${input.name}\n* Email: ${input.email}\n* GitHub: https://github.com/${input.gitHub}\n\n`,
+            `## Questions\n\nAny additional questions about this project? Please feel free to reach out:\n\n${input.name}\n* Email: ${input.email}\n* GitHub: https://github.com/${input.gitHub}\n\n`,
             (err) => err ? console.error(err) : "" );
 
             contributorPrompt();
@@ -235,7 +235,7 @@ function teamPrompts() {
             
             // Add additional contributors' (if any) contact information to README
             fs.appendFile("README.md",
-            `* Name: ${input.name}\n${displayEmail}${displayGitHub}\n`,
+            `${input.name}\n${displayEmail}${displayGitHub}\n`,
             (err) => err ? console.error(err) : "" );
 
             if (input.teamConfirm2 === true) {

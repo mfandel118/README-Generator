@@ -44,16 +44,20 @@ https://github.com/mfandel118/Portfolio
 
 Any additional questions about this project? Please feel free to reach out:
 
-- Name: Marissa Fandel
+Marissa Fandel
+
 - Email: mfandel118@gmail.com
 - GitHub: https://github.com/mfandel118
 
-- Name: Sample Contributor #1
+Sample Contributor #1
+
 - Email: sample@email.com
 - GitHub: https://github.com/user1234567
 
-- Name: Sample Contributor #2
+Sample Contributor #2
+
 - Email: sample2@email.com
 
-- Name: Sample Contributor #3
+Sample Contributor #3
+
 - GitHub: https://github.com/user12345678
