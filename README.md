@@ -41,6 +41,7 @@ https://github.com/mfandel118/README-Generator
 
 ## Questions
 
-- Send me an Email: mfandel118@gmail.com
+Marissa Fandel
 
-- Connect through GitHub: https://github.com/mfandel118
+- Email: mfandel118@gmail.com
+- GitHub: https://github.com/mfandel118
