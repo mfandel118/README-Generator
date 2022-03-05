@@ -1,13 +1,13 @@
 // Title✅ 
 // Table of Contents✅ 
-// License✅✅ 
-// Description✅✅ 
-// Usage✅✅ 
-// Installation✅✅ 
-// Deployed link✅✅ 
-// GitHub link✅✅ 
-// Pictures✅✅ 
-// Questions & Contributors✅✅ 
+// License✅
+// Description✅
+// Usage✅
+// Installation✅
+// Deployed link✅
+// GitHub link✅
+// Pictures✅
+// Questions & Contributors✅
 
 
 // Modules
@@ -77,6 +77,12 @@ inquirer
                 "Eclipse_Public_License_1.0",
             ]
         },
+        {
+            type: "confirm",
+            message: "Do you have a SCREENSHOT of your deployed application?",
+            name: "picConfirm",
+            default: false
+        }, 
     ])
     .then((input) => {
         // console.log(input)
@@ -88,11 +94,12 @@ inquirer
         let repoToC = input.repoConfirm ? `* [Link to GitHub Repo](#link-to-github-repo)\n` : "";
         
         let picToC = input.picConfirm ? `* [Screenshots](#screenshots)\n`: "";
+        let picHeader = input.picConfirm ? `## Screenshot(s)\n\n`: "";
         
         // Display all inputted information on README file
         fs.writeFile("README.md", 
-        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}* [Questions](#questions)\n\n[![${input.license} License](https://img.shields.io/badge/License-${input.license}-blue.svg)](https://opensource.org/licenses/)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}`, 
-        (err) => err ? console.error(err) : console.log('README file created! Additional info needed:'));
+        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}* [Questions](#questions)\n\n[![${input.license} License](https://img.shields.io/badge/License-${input.license}-blue.svg)](https://opensource.org/licenses/)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${picHeader}`, 
+        (err) => err ? console.error(err) : "" );
         
         if (input.picConfirm === true) {
             picturePrompts();
@@ -109,27 +116,24 @@ function picturePrompts() {
                 type: "input",
                 message: "Please enter the FILE PATH or URL to the screenshot image:",
                 name: "pic",
-                when: (input) => input.picConfirm === true,
             },
             {
                 type: "input",
                 message: "Please enter ALT TEXT for this photo:",
                 name: "pictext",
-                when: (input) => input.picConfirm === true,
             },
             {
                 type: "confirm",
                 message: "Do you have a ANOTHER SCREENSHOT of your deployed application?",
                 name: "picConfirm2",
-                when: (input) => input.picConfirm === true,
                 default: false
             },      
         ])
         .then((input) => {
             // Add pic to README file
             fs.appendFile("README.md",
-            `## Screenshot(s)\n![${input.pictext}](${input.pic})\n\n${displayPic2}\n\n`,
-            (err) => err ? console.error(err) : console.log('Picture(s) added to README! Additional info needed:'));
+            `![${input.pictext}](${input.pic})\n\n`,
+            (err) => err ? console.error(err) : "");
             
             if (input.picConfirm2 === true) {
                 picturePrompts();
@@ -161,8 +165,8 @@ function contactPrompts() {
         .then((input) => {
             // Add user contact info to README
             fs.appendFile("README.md",
-            `## Questions\n\nAny additional questions about this project? Please feel free to reach out:\n\n*Name: ${input.name}\n* Email: ${input.email}\n* GitHub: https://github.com/${input.gitHub}\n\n`,
-            (err) => err ? console.error(err) : console.log('Contact Info added to README! Additional info needed:'));
+            `## Questions\n\nAny additional questions about this project? Please feel free to reach out:\n\n* Name: ${input.name}\n* Email: ${input.email}\n* GitHub: https://github.com/${input.gitHub}\n\n`,
+            (err) => err ? console.error(err) : "" );
 
             contributorPrompt();
         })
@@ -207,8 +211,8 @@ function teamPrompts() {
                 when: (input) => input.emailConfirm === true,
             },
             {
-                type: "input",
-                message: "Do you want to add this person's GITHUB USERNAME?",
+                type: "confirm",
+                message: "Do you want to add this person's GITHUB profile?",
                 name: "gitHubConfirm",
             },
             {
@@ -225,12 +229,14 @@ function teamPrompts() {
             
         ])
         .then((input) => {
-            
+            let displayEmail = input.emailConfirm ? `* Email: ${input.email}\n` : "";
+            let displayGitHub = input.gitHubConfirm ? `* GitHub: https://github.com/${input.gitHub}\n` : "";
+
             
             // Add additional contributors' (if any) contact information to README
             fs.appendFile("README.md",
-            `*Name: ${input.name}\n* Email: ${input.email}\n* GitHub: https://github.com/${input.gitHub}\n\n`,
-            (err) => err ? console.error(err) : console.log("Contributor's contact info added to README!"));
+            `* Name: ${input.name}\n${displayEmail}${displayGitHub}\n`,
+            (err) => err ? console.error(err) : "" );
 
             if (input.teamConfirm2 === true) {
                 teamPrompts();

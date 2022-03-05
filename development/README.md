@@ -7,8 +7,10 @@
 - [Installation](#installation)
 - [Link to Deployed Application](#link-to-deployed-application)
 - [Link to GitHub Repo](#link-to-github-repo)
-- [License](#license)
+- [Screenshots](#screenshots)
 - [Questions](#questions)
+
+[![Apache_2.0 License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/)
 
 ## Description
 
@@ -30,12 +32,28 @@ https://mfandel118.github.io/Portfolio/
 
 https://github.com/mfandel118/Portfolio
 
-## License
+## Screenshot(s)
 
-[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/)
+![Screenshot](./assets/portfolio.png)
 
-## Questions?
+![Another Screenshot](./assets/portfolio.png)
 
-- Send me an Email: mfandel118@gmail.com
+![Third Screenshot](./assets/portfolio.png)
 
-- Connect through GitHub: https://github.com/mfandel118
+## Questions
+
+Any additional questions about this project? Please feel free to reach out:
+
+- Name: Marissa Fandel
+- Email: mfandel118@gmail.com
+- GitHub: https://github.com/mfandel118
+
+- Name: Sample Contributor #1
+- Email: sample@email.com
+- GitHub: https://github.com/user1234567
+
+- Name: Sample Contributor #2
+- Email: sample2@email.com
+
+- Name: Sample Contributor #3
+- GitHub: https://github.com/user12345678
