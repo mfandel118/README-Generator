@@ -113,34 +113,15 @@ inquirer
             default: "MIT",
             choices: [
                 "MIT",
-                "Apache 2.0",
-                "Boost Software License 1.0",
-                "BSD 3-Clause",
-                "BSD 2-Clause",
-                "CC0-1.0",
-                "CC BY 4.0",
-                "CC BY-SA 4.0",
-                "CC BY-NC 4.0",
-                "CC BY-ND 4.0",
-                "CC BY-NC-SA 4.0",
-                "CC BY-NC-ND 4.0",
-                "Eclipse Public License 1.0",
-                "GNU GPL v3",
-                "GNU GPL v2",
-                "GNU AGPL v3",
-                "GNU LGPL v3",
-                "GNU FDL v1.3",
-                "IPL 1.0",
-                "ICL",
-                "MPL 2.0",
-                "Open Data Commons Attribution",
-                "ODbL",
-                "PDDL",
-                "Artistic-2.0",
-                "Open Font-1.1",
-                "Unlicense",
-                "WTFPL",
-                "Zlib"]
+                "Apache_2.0",
+                "BSD_3Clause",
+                "BSD_2Clause",
+                "GNU_GPL_v3",
+                "GNU_LGPL_v3",
+                "MPL_2.0",
+                "CDDL_1.0",
+                "Eclipse_Public_License_1.0",
+            ]
         },
     ])
     .then((input) => {
@@ -162,8 +143,8 @@ inquirer
         // Display all inputted information on README file
         fs.writeFile("README.md", 
 
-        // Title✅ Table of Contents✅ Description✅✅ Usage✅ Installation✅✅ Deployed link✅✅ GitHub link✅✅ Pictures✅✅ License✅Contributors✅✅ Questions✅✅ 
-        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}* [License](#license)\n${teamToC}* [Questions](#questions)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}\n\n## License\n\n![${input.license} License](https://img.shields.io/badge/License-${input.license}-blue.svg)\n\n${displayTeam}## Questions?\n\n* Send me an Email: ${input.email}\n\n* Connect through GitHub: https://github.com/${input.gitHub}\n\n`, 
+        // Title✅ Table of Contents✅ Description✅✅ Usage✅ Installation✅✅ Deployed link✅✅ GitHub link✅✅ Pictures✅✅ License✅✅ Contributors✅✅ Questions✅✅ 
+        `# ${input.projName}\n\n## Table of Contents:\n\n* [Description](#description)\n* [Usage](#usage)\n* [Installation](#installation)\n${urlToC}${repoToC}${picToC}* [License](#license)\n${teamToC}* [Questions](#questions)\n\n## Description\n\n${input.description}\n\n## Usage\n\n${input.usage}\n\n## Installation\n\n${input.install}\n\n${displayURL}${displayRepo}${displayPic1}${displayPic2}\n\n## License\n\n[![${input.license} License](https://img.shields.io/badge/License-${input.license}-blue.svg)](https://opensource.org/licenses/)\n\n${displayTeam}## Questions?\n\n* Send me an Email: ${input.email}\n\n* Connect through GitHub: https://github.com/${input.gitHub}\n\n`, 
         
         (err) =>
         err ? console.error(err) : console.log('README file created!'));
