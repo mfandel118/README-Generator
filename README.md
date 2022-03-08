@@ -34,6 +34,10 @@ in the terminal once you change directories into the development folder.
 
 https://github.com/mfandel118/README-Generator
 
+## Video Walkthrough of Application
+
+https://drive.google.com/file/d/1xGk5PC_pt1g-Q_Es3Gw7_iF6HyobU70A/view
+
 ## Screenshot(s)
 
 ![Screenshot of README Generator Prompts](./assets/node-prompts.png)
